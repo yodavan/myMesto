@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+    <link rel="stylesheet" href="pages/index.css">
+</head>
+<body class="page">
+    <header class="header">
+      <img class="header__logo" src="images/logo.svg" alt="логотип сайта">
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div class="profile__avatar">
+          <img class="profile__picture" src="images/avatar.png" alt="аватарка пользователя">
+        </div>
+        <div class="profile__info">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <button type="button" class="profile__button-change" aria-label="кнопка редактирования информации в профиле"></button>
+          <p class="profile__self-description">Исследователь океана</p>
+        </div>
+        <button type="button" class="profile__button-addphoto" aria-label="кнопка добавления фотографий"></button>
+      </section>
+      <section class="images">
+        <ul class="images__list">
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+    </footer>
+    <div class="popup popup_profile">
+      <div class="popup__container">
+        <button class="button-close" type="button" aria-label="кнопка закрытия формы"></button>
+        <form class="popup__form form" name="formPopupProfile" novalidate autocomplete="off">
+          <h2 class="form__text">Редактировать профиль</h2>
+          <div class="form__field">
+            <input class="form__input form__input_field_name" type="text" id="userName" name="userName" required minlength="2" maxlength="40" placeholder="Напишите ваше имя">
+            <span class="form__field-error" id="error-userName"></span>
+          </div>
+          <div class="form__field">
+            <input class="form__input form__input_field_description" type="text" id="userJob" name="userJob" required minlength="2" maxlength="200" placeholder="Напишите чем вы занимаетесь">
+            <span class="form__field-error" id="error-userJob"></span>
+          </div>
+          <button class="button-save" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_photo">
+      <div class="popup__container">
+        <button class="button-close" type="button" aria-label="кнопка закрытия формы"></button>
+        <form class="popup__form form" name="formPopupPhoto" novalidate autocomplete="off">
+          <h2 class="form__text">Новое место</h2>
+          <div class="form__field">
+            <input class="form__input form__input_field_title" type="text" id="photoName" name="photoName" required minlength="2" maxlength="30" placeholder="Название">
+            <span class="form__field-error" id ="error-photoName"></span>
+          </div>
+          <div class="form__field">
+            <input class="form__input form__input_field_link" type="url" id="photoLink" name="photoLink" required placeholder="Ссылка на картинку">
+          <span class="form__field-error" id="error-photoLink"></span>
+          </div>
+          <button class="button-save" type="submit">Создать</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_fullview">
+      <div class="popupfullview">
+        <figure class="popupfullview__image">
+          <img class="popupfullview__picture" src="images/tbilisi.jpg" alt="Тбилиси">
+          <figcaption class="popupfullview__caption"></figcaption>
+        </figure>
+        <button type="button" class="button-close" aria-label="кнопка закрытия формы"></button>
+      </div>
+    </div>
+    <template class="item__template">
+      <li class="cards">
+        <img class="cards__picture" src="images/tbilisi.jpg" alt="Тбилиси">
+        <div class="cards__description">
+          <h2 class="cards__title"></h2>
+          <button type="button" class="cards__button" aria-label="кнопка like"></button>
+        </div>
+        <button type="button" class="cards__delete-button" aria-label="кнопка удалить"></button>
+      </li>
+    </template>
+    <script src="js/index.js"></script>
+    <script src="js/validate.js"></script>
+</body>
+</html>
